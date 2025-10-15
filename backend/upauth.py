@@ -6,7 +6,7 @@ from updatabase import SessionLocal
 from upmodels import User
 
 
-SECRET_KEY= "nisha29"
+SECRET_KEY= "Your secret Key"
 ALGORITHM= "HS256"
 oauth2_scheme=OAuth2PasswordBearer(tokenUrl="login")
 
