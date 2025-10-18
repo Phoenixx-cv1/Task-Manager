@@ -20,7 +20,8 @@ app = FastAPI(title="TaskFlow - Task Manager API")
 # --- Enable CORS ---
 origins = [
     "http://localhost:3000",  # React default port
-    "http://127.0.0.1:3000"
+    "http://127.0.0.1:3000",
+    "https://taskflow-backend-9exd.onrender.com"
 ]
 
 app.add_middleware(

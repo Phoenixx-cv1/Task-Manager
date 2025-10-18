@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css';
 
-const API_URL = 'http://127.0.0.1:8000';
+const API_URL = 'https://taskflow-backend-9exd.onrender.com';
 
 function App() {
   // State variables
