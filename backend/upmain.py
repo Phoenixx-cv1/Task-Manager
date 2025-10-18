@@ -21,7 +21,7 @@ app = FastAPI(title="TaskFlow - Task Manager API")
 origins = [
     "http://localhost:3000",  # React default port
     "http://127.0.0.1:3000",
-    "https://taskflow-backend-9exd.onrender.com"
+    "https://taskflow-frontend-2om7.onrender.com",
 ]
 
 app.add_middleware(
