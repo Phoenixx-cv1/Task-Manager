@@ -4,10 +4,13 @@ from jose import JWTError, jwt
 from sqlalchemy.orm import Session
 from updatabase import SessionLocal
 from upmodels import User
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
-SECRET_KEY= "Your secret Key"
-ALGORITHM= "HS256"
+SECRET_KEY = os.getenv("SECRET_KEY")
+ALGORITHM = os.getenv("ALGORITHM")
 oauth2_scheme=OAuth2PasswordBearer(tokenUrl="login")
 
 def get_db():
@@ -18,7 +21,7 @@ def get_db():
     db.close()
 
 def get_current_user(token:str= Depends(oauth2_scheme), db:Session= Depends(get_db)):
-   credentials_exception= HTTPException(status_code= status.HTTP_401_UNAUTHORIZED,detail="Could not validate credentials",headers={"WWW-Authenticate":"Bearer"},)
+   credentials_expection= HTTPException(status_code= status.HTTP_401_UNAUTHORIZED,detail="Could not validate credentials",headers={"WWW-Authenticate":"Bearer"},)
    try:
     payload= jwt.decode(token,SECRET_KEY, algorithms=[ALGORITHM])
     username: str=payload.get("sub")
